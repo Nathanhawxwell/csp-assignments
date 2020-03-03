@@ -10,7 +10,7 @@ var y = canvas.height-30;
 var dx = random;
 var dy = 10;
 var paddleHeight = 10;
-var paddleWidth = 75;
+var paddleWidth = 125;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
@@ -68,6 +68,7 @@ function collisionDetection() {
           dy = -dy;
           b.status = 0;
           score++;
+          paddleWidth-=.1
           if(score == brickRowCount*brickColumnCount) {
             alert("YOU WIN, CONGRATS!");
             document.location.reload();
@@ -102,7 +103,7 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "green";
         ctx.fill();
         ctx.closePath();
       }
@@ -156,10 +157,10 @@ function draw() {
   }
 
   if(rightPressed && paddleX < canvas.width-paddleWidth) {
-    paddleX += 10;
+    paddleX += 20;
   }
   else if(leftPressed && paddleX > 0) {
-    paddleX -= 10;
+    paddleX -= 20;
   }
 
   x += dx;
