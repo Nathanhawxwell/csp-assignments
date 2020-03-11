@@ -32,10 +32,10 @@ function keyDownHandler(e) {
         leftPressed = true;
     }
    if(e.key == "d") {
-        rightPressed = true;
+        rightPressed2 = true;
     }
-    else if(e.key == "a") {
-        leftPressed = true;
+   else if(e.key == "a") {
+        leftPressed2 = true;
     }
 }
 
@@ -45,6 +45,12 @@ function keyUpHandler(e) {
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = false
+    }
+  if(e.key == "d") {
+        rightPressed2 = false;
+    }
+   else if(e.key == "a") {
+        leftPressed2 = false;
     }
 }
 
