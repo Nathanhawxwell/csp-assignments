@@ -12,8 +12,11 @@ var dy = 10;
 var paddleHeight = 10;
 var paddleWidth = 125;
 var paddleX = (canvas.width-paddleWidth)/2;
+var paddleX2 = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
+var rightPressed2 = false;
+var leftPressed2 = false;
 var score = 0;
 var lives = 3;
 
@@ -26,6 +29,12 @@ function keyDownHandler(e) {
         rightPressed = true;
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
+        leftPressed = true;
+    }
+   if(e.key == "d") {
+        rightPressed = true;
+    }
+    else if(e.key == "a") {
         leftPressed = true;
     }
 }
@@ -60,6 +69,13 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
+function drawPaddle2() {
+  ctx.beginPath();
+  ctx.rect(paddleX2, 0 , paddleWidth, paddleHeight);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.closePath();
+}
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#0095DD";
@@ -77,6 +93,7 @@ function draw() {
   drawPaddle();
   drawScore();
   drawLives();
+  drawPaddle2();
 
   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
@@ -110,6 +127,14 @@ function draw() {
   else if(leftPressed && paddleX > 0) {
     paddleX -= 20;
   }
+  
+  if(rightPressed2 && paddleX2 < canvas.width-paddleWidth) {
+    paddleX2 += 20;
+  }
+  else if(leftPressed2 && paddleX2 > 0) {
+    paddleX2 -= 20;
+  }
+
 
   x += dx;
   y += dy;
