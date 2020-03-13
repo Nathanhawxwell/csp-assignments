@@ -106,8 +106,8 @@ function draw() {
   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
-  if(y + dy < ballRadius || y + dy > canvas.height-ballRadius ) {
-    if(x > paddleX && x < paddleX2 + paddleWidth || x > paddleX2 && x < paddleX2 + paddleWidth) {
+  if(y + dy < ballRadius) {
+    if(x > paddleX2 && x < paddleX2 + paddleWidth) {
       dy = -dy;
     }
     else {
@@ -125,7 +125,24 @@ function draw() {
   }
   }
   }
-
+  if(y + dy > canvas.height-ballRadius){
+    if(x > paddleX && x < paddleX + paddleWidth){
+      dy=-dy
+    }else {
+      lives--;
+      if(!lives) {
+        alert("GAME OVER");
+        document.location.reload();
+      }
+      else {
+        x = canvas.width/2;
+        y = canvas.height-30;
+        dx = random;
+        dy = -10;
+        paddleX = (canvas.width-paddleWidth)/2;
+  }
+  }
+  }
   if(rightPressed && paddleX < canvas.width-paddleWidth) {
     paddleX += 20;
   }
