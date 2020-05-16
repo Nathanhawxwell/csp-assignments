@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+  <h2> Hello User!</h2>
+  <a href="https://weather.com/weather/today/l/e683698d95ea9ccec87a3b18467766d3ee62896c8c064b55bc3c0f1f7bf34d46">Click here to view weather</a>
 <canvas id="canvas" width="200" height="200"
 </canvas>
 
