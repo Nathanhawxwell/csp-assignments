@@ -5,6 +5,11 @@ ctx.translate(radius, radius);
 radius = radius * .90
 setInterval(drawClock, 1000);
 
+function name() {
+    var name= prompt("What is your name");
+    alert("Hi " + name + "! ");
+}
+
 function drawClock() {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
@@ -77,3 +82,9 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+name();
+
+var circle = new Circle(radius);
+circle.setPosition(1, 2);
+circle.setColor(Color.yellow);
+add(circle);
