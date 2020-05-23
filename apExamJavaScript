@@ -2,8 +2,10 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
-radius = radius * .90
+radius = radius * .90;
 setInterval(drawClock, 1000);
+
+
 
 function name() {
     var name= prompt("What is your name");
@@ -82,9 +84,3 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
-name();
-
-var circle = new Circle(radius);
-circle.setPosition(1, 2);
-circle.setColor(Color.yellow);
-add(circle);
