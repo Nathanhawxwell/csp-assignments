@@ -2,10 +2,14 @@
 <html>
 <body>
   <div>
-  <h2> Welcome!</h2>
-  <a href="https://weather.com/weather/today/l/e683698d95ea9ccec87a3b18467766d3ee62896c8c064b55bc3c0f1f7bf34d46">Click here to view weather</a>
+  <h1> Welcome!</h2>
+  <h3> 
+  <a href="https://weather.com/weather/today/l/e683698d95ea9ccec87a3b18467766d3ee62896c8c064b55bc3c0f1f7bf34d46"><img src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" width="150" height="150"></a>
   </div>
-    <canvas id="canvas" width="200" height="200"
+  <div>
+    <h3>Click the sun to check the weather.</h3>
+    </div>
+    <canvas id="canvas" width="200" height="200">
 </canvas>
 
 
