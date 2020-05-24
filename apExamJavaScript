@@ -1,3 +1,4 @@
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
@@ -8,8 +9,15 @@ setInterval(drawClock, 1000);
 
 
 function name() {
-    var name= prompt("What is your name");
-    alert("Hi " + name + "! ");
+    var userName = prompt("What is your name");
+    alert("Hi " + userName + "! ");
+}
+
+function addition() {
+  var firstNumber = prompt("I can add numbers for you. What is the first number you would like to add?");
+  var secondNumber = prompt("What is your second number?");
+  var additionTotal = parseInt(firstNumber) + parseInt(secondNumber);
+  alert("Your total is: " + additionTotal )
 }
 
 function drawClock() {
@@ -86,4 +94,4 @@ function drawHand(ctx, pos, length, width) {
 }
 
 name();
-
+addition();
